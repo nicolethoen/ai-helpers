@@ -12,6 +12,9 @@ validate: ## Run manifest and doc validation (same as CI)
 	@if ! git diff --quiet PLUGINS.md README.md CONTRIBUTING-SKILLS.md \
 		plugins/*/README.md plugins/*/*/README.md 2>/dev/null; then \
 		echo "Error: Generated docs are out of date. Run 'make docs' and commit the result."; \
+		echo "Generated-doc diff:"; \
+		git diff -- PLUGINS.md README.md CONTRIBUTING-SKILLS.md \
+			plugins/*/README.md plugins/*/*/README.md; \
 		exit 1; \
 	fi
 
