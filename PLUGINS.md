@@ -229,17 +229,17 @@ Generated from skill frontmatter and section headings. Token cost is a relative 
 
 | Skill | Audience | Inputs | Outputs | Token cost |
 |---|---|---|---|---|
-| `uxd-design-handoff` | Contributors and maintainers | Task context | The handoff spec is written to a local file (markdown by default, JSON when --format=json). I... | L |
-| `uxd-discovery` | Contributors and maintainers | Input Type Required Default Problem source Jira issue key/URL, feature description, or proble... | markdown Discovery Brief: [Problem Title] Date: [YYYY-MM-DD] Source: [Jira issue key, or "Fea... | L |
-| `uxd-evaluate-design-heuristics` | Contributors and maintainers | Task context | Given the required inputs, this skill produces: Verdict — Pass or Fail. Any dimension scori... | L |
+| `uxd-design-handoff` | Contributors and maintainers | Input Required Source Design artifact (prototype files, Figma screenshots, text description) ... | The handoff spec is written to a local file (markdown by default, JSON when --format=json). I... | L |
+| `uxd-discovery` | Contributors and maintainers | Input Type Required Default Problem source Jira issue key/URL, feature description, or proble... | Output Format Description Discovery brief Structured markdown Problem statement, user groups,... | L |
+| `uxd-evaluate-design-heuristics` | Contributors and maintainers | The skill expects one or more of the following, provided by the user or by an upstream skill:... | Given the required inputs, this skill produces: Verdict — Pass or Fail. Any dimension scori... | L |
 | `uxd-figma-read` | Contributors and maintainers | Task context | Structured result | M |
-| `uxd-prototype-create` | Contributors and maintainers | Input Required Source What to prototype (Jira URL/key, Figma link, description, or idea) Yes ... | Structured result | XL |
-| `uxd-prototype-evaluate` | Contributors and maintainers | Input Example Required Jira story key PROJ-298 Yes Prototype URL http://localhost:3000 Condit... | Structured result | XL |
-| `uxd-prototype-export` | Contributors and maintainers | Input Required Source What to export (current page, journey batch, or install bar) Yes User; ... | Structured result | L |
-| `uxd-prototype-publish` | Contributors and maintainers | Input Source Required Prototype files .artifacts/{ID}/prototype/ or workspace files Yes metad... | Structured result | L |
-| `uxd-research-heuristic-eval` | Contributors and maintainers | Input Type Required Default Interface to evaluate Screenshots, image files, text descriptions... | Structured result | XL |
+| `uxd-prototype-create` | Contributors and maintainers | Input Required Source What to prototype (Jira URL/key, Figma link, description, or idea) Yes ... | Written under .artifacts/{ID}/ in the consumer project (never ${CLAUDESKILLDIR}): Output Loca... | XL |
+| `uxd-prototype-evaluate` | Contributors and maintainers | Input Example Required Jira story key PROJ-298 Yes Prototype URL http://localhost:3000 Condit... | Per-key eval files under ${UXDPROJECTROOT}/.artifacts/<KEY>/eval/ (ARTIFACTSDIR): File Descri... | XL |
+| `uxd-prototype-export` | Contributors and maintainers | Input Required Source What to export (current page, journey batch, or install bar) Yes User; ... | Under .artifacts/{ID}/exports/ unless --out is set: Output Description index.html + export-ma... | L |
+| `uxd-prototype-publish` | Contributors and maintainers | Input Source Required Prototype files .artifacts/{ID}/prototype/ or workspace files Yes metad... | Output Description Published prototype GitLab MR, GitHub Pages, GitLab Pages, or Vercel URL U... | L |
+| `uxd-research-heuristic-eval` | Contributors and maintainers | Input Type Required Default Interface to evaluate Screenshots, image files, text descriptions... | Output Format Location Evaluation report .md and .html [project-dir]/heuristic-eval-[date].[e... | XL |
 | `pf-a11y-audit` | PatternFly designers and developers | Task context | Per finding: [ERRORWARNINFO] file/path.tsx:42 — description (WCAG X.X.X) Found: what was de... | L |
-| `pf-a11y-keyboard` | PatternFly designers and developers | Task context | Structured result | L |
+| `pf-a11y-keyboard` | PatternFly designers and developers | Source Required Description URL Yes URL to a running application (localhost or deployed) Focu... | Structured result | L |
 | `pf-review` | PatternFly designers and developers | Task context | Structured result | M |
 | `pf-security-scan` | PatternFly designers and developers | Task context | Structured result | M |
 | `pf-ai-audit` | PatternFly designers and developers | Task context | Structured result | L |
@@ -253,24 +253,24 @@ Generated from skill frontmatter and section headings. Token cost is a relative 
 | `pf-css-migration-scan` | PatternFly designers and developers | Task context | For each finding include: file path current class/token recommended PF6 replacement confidenc... | S |
 | `pf-react-migration-scan` | PatternFly designers and developers | Task context | Structured result | M |
 | `pf-release-candidate-update` | PatternFly designers and developers | Task context | Structured result | M |
-| `pf-chart-gen` | PatternFly designers and developers | Task context | Output the complete chart component ready to save. Include the import block, data transformat... | M |
+| `pf-chart-gen` | PatternFly designers and developers | The user provides one of: A description of the chart type and data (e.g., "bar chart showing ... | Output the complete chart component ready to save. Include the import block, data transformat... | M |
 | `pf-component-check` | PatternFly designers and developers | Task context | Structured result | L |
 | `pf-component-reuse-check` | PatternFly designers and developers | Task context | Structured result | M |
 | `pf-deploy` | PatternFly designers and developers | Task context | Structured result | M |
 | `pf-design-comments-setup` | PatternFly designers and developers | Task context | Structured result | M |
-| `pf-form-gen` | PatternFly designers and developers | Task context | Output the complete form component ready to save. Include the import block, component functio... | M |
+| `pf-form-gen` | PatternFly designers and developers | The user provides one of: A description of the form's purpose and fields (e.g., "create a use... | Output the complete form component ready to save. Include the import block, component functio... | M |
 | `pf-import-check` | PatternFly designers and developers | Task context | Provide: offending file paths exact import lines to replace corrected import lines any CSS im... | S |
 | `pf-project-gen` | PatternFly designers and developers | Task context | Structured result | M |
-| `pf-table-gen` | PatternFly designers and developers | Task context | Output the complete table component ready to save. Include the import block, type definitions... | M |
-| `pf-test-gen` | PatternFly designers and developers | Task context | Output the complete test file ready to save. Name it ComponentName.test.tsx matching the sour... | M |
-| `pf-analytics-repo-pruning` | Contributors and maintainers | Task context | Structured result | S |
-| `pf-bug-triage` | Contributors and maintainers | Task context | Produce a triage comment or summary using this template: markdown | S |
+| `pf-table-gen` | PatternFly designers and developers | The user provides one of: A description of the data and desired table features (e.g., "sortab... | Output the complete table component ready to save. Include the import block, type definitions... | M |
+| `pf-test-gen` | PatternFly designers and developers | The user will provide a component file path or component code. Read the component source befo... | Output the complete test file ready to save. Name it ComponentName.test.tsx matching the sour... | M |
+| `pf-analytics-repo-pruning` | Contributors and maintainers | File: repos.json (project root or path the user supplies). Expect a top-level repos array; ea... | Structured result | S |
+| `pf-bug-triage` | Contributors and maintainers | The user provides an issue (title, body, labels, and optionally linked files or component nam... | Produce a triage comment or summary using this template: markdown | S |
 | `pf-content-review` | Contributors and maintainers | Task context | Structured result | S |
 | `pf-create-issue` | Contributors and maintainers | Task context | Structured result | M |
 | `pf-css-var-scan` | Contributors and maintainers | Task context | A Markdown report with: Summary statistics (total vars, redefined count/%, undefined, unused,... | S |
-| `pf-duplicate-epic` | Contributors and maintainers | Task context | After a successful run, display these URLs to the user: Feature: https://redhat.atlassian.net... | S |
+| `pf-duplicate-epic` | Contributors and maintainers | The command takes exactly two positional arguments: Position Name Description $1 issue Any Ji... | After a successful run, display these URLs to the user: Feature: https://redhat.atlassian.net... | S |
 | `pf-figma-diff` | Contributors and maintainers | Task context | FIGMACHANGELOG.md - Internal design team changelog with all updates RELEASENOTES.md - Consume... | L |
-| `pf-modifier-scan` | Contributors and maintainers | Task context | Write a Markdown file with: | S |
+| `pf-modifier-scan` | Contributors and maintainers | The user will specify a scope: all components (default), a specific component, a specific mod... | Write a Markdown file with: | S |
 | `pf-org-version-update` | Contributors and maintainers | Task context | Structured result | M |
 | `pf-prototype-mode` | Contributors and maintainers | Task context | Structured result | S |
 | `pf-quarterly-report-gen` | Contributors and maintainers | Task context | Structured result | M |
