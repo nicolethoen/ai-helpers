@@ -220,3 +220,63 @@ PatternFly team tools and skill incubation — issue triage, release management,
 
 - Consumer: 25/25 (100%)
 - Workshop: 6/26 (23%)
+
+---
+
+## Skill discovery matrix
+
+Generated from skill frontmatter and section headings. Token cost is an approximate prompt-footprint metric (word count × 1.3) for comparing skills, not a model billing estimate.
+
+| Skill | Audience | Inputs | Outputs | Token cost |
+|---|---|---|---|---|
+| `uxd-design-handoff` | Contributors and maintainers | Task context | The handoff spec is written to a local file (markdown by default, JSON when --format=json). I... | ~3699 tokens (L) |
+| `uxd-discovery` | Contributors and maintainers | Input Type Required Default Problem source Jira issue key/URL, feature description, or proble... | markdown Discovery Brief: [Problem Title] Date: [YYYY-MM-DD] Source: [Jira issue key, or "Fea... | ~3262 tokens (L) |
+| `uxd-evaluate-design-heuristics` | Contributors and maintainers | Task context | Given the required inputs, this skill produces: Verdict — Pass or Fail. Any dimension scori... | ~4409 tokens (L) |
+| `uxd-figma-read` | Contributors and maintainers | Task context | Structured result | ~2491 tokens (L) |
+| `uxd-prototype-create` | Contributors and maintainers | Input Required Source What to prototype (Jira URL/key, Figma link, description, or idea) Yes ... | Structured result | ~12319 tokens (L) |
+| `uxd-prototype-evaluate` | Contributors and maintainers | Input Example Required Jira story key PROJ-298 Yes Prototype URL http://localhost:3000 Condit... | Structured result | ~41468 tokens (L) |
+| `uxd-prototype-export` | Contributors and maintainers | Input Required Source What to export (current page, journey batch, or install bar) Yes User; ... | Structured result | ~4163 tokens (L) |
+| `uxd-prototype-publish` | Contributors and maintainers | Input Source Required Prototype files .artifacts/{ID}/prototype/ or workspace files Yes metad... | Structured result | ~4693 tokens (L) |
+| `uxd-research-heuristic-eval` | Contributors and maintainers | Input Type Required Default Interface to evaluate Screenshots, image files, text descriptions... | Structured result | ~15623 tokens (L) |
+| `pf-a11y-audit` | PatternFly designers and developers | Task context | Per finding: [ERRORWARNINFO] file/path.tsx:42 — description (WCAG X.X.X) Found: what was de... | ~5349 tokens (L) |
+| `pf-a11y-keyboard` | PatternFly designers and developers | Task context | Structured result | ~6136 tokens (L) |
+| `pf-review` | PatternFly designers and developers | Task context | Structured result | ~1479 tokens (M) |
+| `pf-security-scan` | PatternFly designers and developers | Task context | Structured result | ~2399 tokens (L) |
+| `pf-ai-audit` | PatternFly designers and developers | Task context | Structured result | ~5076 tokens (L) |
+| `pf-color-scan` | PatternFly designers and developers | Task context | For every violation found, provide: File Name: [Name] File Path: [Path] Line Number: [Number]... | ~843 tokens (M) |
+| `pf-css-token-check` | PatternFly designers and developers | Task context | For every violation found, provide: Header:  | ~4094 tokens (L) |
+| `pf-figma-check` | PatternFly designers and developers | Task context | Structured result | ~1005 tokens (M) |
+| `pf-figma-token-check` | PatternFly designers and developers | Theme: Infer default vs Red Hat from brand accent when present: #ee0000 → Red Hat; #0066cc ... | Structured result | ~5041 tokens (L) |
+| `pf-icon-finder` | PatternFly designers and developers | Task context | Structured result | ~3635 tokens (L) |
+| `pf-figma-design-mode` | PatternFly designers and developers | Task context | Structured result | ~1736 tokens (L) |
+| `pf-screenshot-mapping` | PatternFly designers and developers | Task context | Structured result | ~3559 tokens (L) |
+| `pf-css-migration-scan` | PatternFly designers and developers | Task context | For each finding include: file path current class/token recommended PF6 replacement confidenc... | ~875 tokens (M) |
+| `pf-react-migration-scan` | PatternFly designers and developers | Task context | Structured result | ~2564 tokens (L) |
+| `pf-release-candidate-update` | PatternFly designers and developers | Task context | Structured result | ~2093 tokens (L) |
+| `pf-chart-gen` | PatternFly designers and developers | Task context | Output the complete chart component ready to save. Include the import block, data transformat... | ~1566 tokens (M) |
+| `pf-component-check` | PatternFly designers and developers | Task context | Structured result | ~8692 tokens (L) |
+| `pf-component-reuse-check` | PatternFly designers and developers | Task context | Structured result | ~2637 tokens (L) |
+| `pf-deploy` | PatternFly designers and developers | Task context | Structured result | ~1446 tokens (M) |
+| `pf-design-comments-setup` | PatternFly designers and developers | Task context | Structured result | ~2255 tokens (L) |
+| `pf-form-gen` | PatternFly designers and developers | Task context | Output the complete form component ready to save. Include the import block, component functio... | ~1503 tokens (M) |
+| `pf-import-check` | PatternFly designers and developers | Task context | Provide: offending file paths exact import lines to replace corrected import lines any CSS im... | ~653 tokens (S) |
+| `pf-project-gen` | PatternFly designers and developers | Task context | Structured result | ~1961 tokens (L) |
+| `pf-table-gen` | PatternFly designers and developers | Task context | Output the complete table component ready to save. Include the import block, type definitions... | ~1560 tokens (M) |
+| `pf-test-gen` | PatternFly designers and developers | Task context | Output the complete test file ready to save. Name it ComponentName.test.tsx matching the sour... | ~1410 tokens (M) |
+| `pf-analytics-repo-pruning` | Contributors and maintainers | Task context | Structured result | ~970 tokens (M) |
+| `pf-bug-triage` | Contributors and maintainers | Task context | Produce a triage comment or summary using this template: markdown | ~979 tokens (M) |
+| `pf-content-review` | Contributors and maintainers | Task context | Structured result | ~634 tokens (S) |
+| `pf-create-issue` | Contributors and maintainers | Task context | Structured result | ~2344 tokens (L) |
+| `pf-css-var-scan` | Contributors and maintainers | Task context | A Markdown report with: Summary statistics (total vars, redefined count/%, undefined, unused,... | ~394 tokens (S) |
+| `pf-duplicate-epic` | Contributors and maintainers | Task context | After a successful run, display these URLs to the user: Feature: https://redhat.atlassian.net... | ~808 tokens (M) |
+| `pf-figma-diff` | Contributors and maintainers | Task context | FIGMACHANGELOG.md - Internal design team changelog with all updates RELEASENOTES.md - Consume... | ~8232 tokens (L) |
+| `pf-modifier-scan` | Contributors and maintainers | Task context | Write a Markdown file with: | ~414 tokens (S) |
+| `pf-org-version-update` | Contributors and maintainers | Task context | Structured result | ~1073 tokens (M) |
+| `pf-prototype-mode` | Contributors and maintainers | Task context | Structured result | ~614 tokens (S) |
+| `pf-quarterly-report-gen` | Contributors and maintainers | Task context | Structured result | ~1726 tokens (L) |
+| `pf-rhds-icon-finder` | Contributors and maintainers | Task context | Structured result | ~1774 tokens (L) |
+| `pf-semantic-release-debug` | Contributors and maintainers | Task context | Structured result | ~535 tokens (S) |
+| `pf-summarize-jira-issues` | Contributors and maintainers | Task context | Structured result | ~1255 tokens (M) |
+| `pf-summarize-pr-reviews` | Contributors and maintainers | Task context | Structured result | ~1025 tokens (M) |
+| `pf-token-build` | Contributors and maintainers | Task context | Structured result | ~140 tokens (S) |
+| `pf-write-example-description` | Contributors and maintainers | Task context | Structured result | ~2993 tokens (L) |
