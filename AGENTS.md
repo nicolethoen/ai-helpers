@@ -17,7 +17,6 @@ This repository is an AI marketplace for UXD teams and the products they support
 plugins/uxd-workshop/              — UXD tools and skill incubator
 plugins/patternfly/                — PatternFly meta-plugin and sub-plugins
   ├── .claude-plugin/plugin.json   — Meta-plugin manifest
-  ├── agents/                      — PatternFly routing agents
   └── pf-*/                        — PatternFly sub-plugins
 .claude-plugin/marketplace.json   — Claude marketplace config
 .cursor-plugin/marketplace.json   — Cursor marketplace config
