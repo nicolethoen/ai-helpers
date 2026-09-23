@@ -161,6 +161,9 @@ import sys
 root = pathlib.Path(sys.argv[1])
 count = 0
 for path in sorted(root.rglob("*")):
+    relative = path.relative_to(root)
+    if relative.parts and relative.parts[0] == "eval":
+        continue
     if path.is_file() and path.suffix in {".md", ".yaml", ".yml"}:
         count += len(re.findall(r"\S+", path.read_text(encoding="utf-8")))
 print(count)
